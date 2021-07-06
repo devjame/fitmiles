@@ -15,9 +15,10 @@
 
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}" defer></script>
+        <!-- <script defer src="https://unpkg.com/alpinejs@3.1.1/dist/cdn.min.js"></script> -->
     </head>
     <body class="font-sans antialiased">
-        <div class="min-h-screen bg-gray-100 flex">
+        <div class="min-h-screen bg-gray-100 flex" x-data="{ sidebarOpen: true }">
             @include('layouts.sidebar-navigation')
             <div class="w-full">
                 @include('layouts.navigation')
