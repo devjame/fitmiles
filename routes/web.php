@@ -17,13 +17,30 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
 
-/* Route::middleware(['auth'])->group(function () {
+Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', function () {
         return view('dashboard');
-    })->middleware(['auth'])->name('dashboard');
-}); */
-require __DIR__.'/auth.php';
+    })->name('dashboard');
+
+    Route::get('/treinadores', function () {
+        return view('treinadores');
+    })->name('treinadores');
+
+    Route::get('/membros', function () {
+        return view('membros');
+    })->name('membros');
+
+    Route::get('/calendario', function () {
+        return view('calendario');
+    })->name('calendario');
+
+    Route::get('/planos', function () {
+        return view('planos');
+    })->name('planos');
+
+    Route::get('/modalidades', function () {
+        return view('modalidades');
+    })->name('modalidades');
+});
+require __DIR__ . '/auth.php';
