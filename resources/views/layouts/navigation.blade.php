@@ -9,8 +9,10 @@
                         <x-application-logo class="block h-10 w-auto fill-current text-secondary" />
                     </a>
                 </div>
-                <div class="inline-flex items-center capitalize space-x-8 sm:-my-px ml-10 sm:hidden">
-                    {{ request()->route()->getName() }}
+                <div class="inline-flex items-center capitalize space-x-8 sm:-my-px ml-10 ">
+                    <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+                        {{ request()->route()->getName() }}
+                    </h2>
                 </div>
             </div>
 
