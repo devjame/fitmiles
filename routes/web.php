@@ -42,5 +42,6 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/modalidades', function () {
         return view('modalidades');
     })->name('modalidades');
+    
 });
 require __DIR__ . '/auth.php';
