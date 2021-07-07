@@ -18,19 +18,19 @@
         <!-- <script defer src="https://unpkg.com/alpinejs@3.1.1/dist/cdn.min.js"></script> -->
     </head>
     <body class="font-sans antialiased">
-        <div class="min-h-screen bg-gray-100 flex" x-data="{ sidebarOpen: true }">
+        <div class="min-h-screen bg-gray-100 flex h-screen overflow-y-hidden" x-data="{ sidebarOpen: true }">
             @include('layouts.sidebar-navigation')
-            <div class="w-full">
+            <div class="flex flex-col flex-1 h-full overflow-hidden">
                 @include('layouts.navigation')
     
                 {{-- <!-- Page Heading -->
                 <header class="bg-white shadow">
-                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                    <div class="max-w-7xl mx-auto py-2 px-4 sm:px-6 lg:px-8">
                         {{ $header }}
                     </div>
                 </header> --}}
                 <!-- Page Content -->
-                <main>
+                <main class="flex-1 max-h-full p-5 overflow-hidden overflow-y-scroll">
                     {{ $slot }}
                 </main>
             </div>
