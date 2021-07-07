@@ -5,7 +5,7 @@
 	x-transition:leave="transition transform duration-300"
 	x-transition:leave-start="translate-x-0 opacity-100 ease-out"
 	x-transition:leave-end="-translate-x-full opacity-0 ease-in"
-	class="fixed inset-y-0 z-10 bg-primary h-screen  hidden sm:block shadow-xl transition-all transform" :class="sidebarOpen ? 'w-64' : 'w-20'"
+	class="fixed inset-y-0 z-10 bg-primary h-screen  hidden sm:block shadow-xl transition-all transform lg:static lg:inset-0" :class="sidebarOpen ? 'w-56' : 'w-20'"
 	:class="{'-translate-x-full lg:translate-x-0 lg:w-20': !isSidebarOpen}">
 
     <!-- Logo -->
