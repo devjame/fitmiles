@@ -7,9 +7,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
-class User extends Authenticatable
+class Treinador extends Authenticatable
 {
     use HasFactory, Notifiable;
+
+    protected $table = 'treinadores';
 
     /**
      * The attributes that are mass assignable.
@@ -17,9 +19,12 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name',
+        'nome_completo',
         'email',
-        'password',
+        'NIF',
+        'telemovel',
+        'endereco',
+        'genero'
     ];
 
     /**
@@ -41,8 +46,8 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function treinadores()
+    public function user()
     {
-        return $this->hasMany(Treinador::class);
+        return $this->belongsTo(User::class);
     }
 }
