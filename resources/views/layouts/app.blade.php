@@ -25,12 +25,12 @@
             <div class="flex flex-col flex-1 h-full overflow-hidden">
                 @include('layouts.navigation')
     
-                {{-- <!-- Page Heading -->
+                <!-- Page Heading -->
                 <header class="bg-white shadow">
                     <div class="max-w-7xl mx-auto py-2 px-4 sm:px-6 lg:px-8">
                         {{ $header }}
                     </div>
-                </header> --}}
+                </header>
                 <!-- Page Content -->
                 <main class="flex-1 max-h-full overflow-hidden overflow-y-scroll container">
                     {{ $slot }}
