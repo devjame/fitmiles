@@ -18,12 +18,11 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5l7 7-7 7M5 5l7 7-7 7" />
                     </svg>
                 </div>
-                
-                <div class="inline-flex items-center capitalize space-x-8 sm:-my-px ml-10 ">
+                {{-- <div class="inline-flex items-center capitalize space-x-8 sm:-my-px ml-10 ">
                     <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                         {{ request()->route()->getName() }}
                     </h2>
-                </div>
+                </div> --}}
             </div>
 
             <!-- Settings Dropdown -->
