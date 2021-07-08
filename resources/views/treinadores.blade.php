@@ -10,16 +10,12 @@
 			<div class="flex flex-col">
 				<div class="flex justify-between mb-4" x-data="{ showModal: false}">
 					<p>Treinadores</p>
-					<x-action-button class="mr-3 bg-primary-light w-9 h-9 md:w-44 rounded-full flex-shrink-0 justify-center" @click=" showModal = true ">
+					<x-action-button class="mr-3 bg-primary-light w-9 h-9 md:w-44 rounded-full flex-shrink-0 justify-center" >
 						<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
 						</svg>
 						<span class="hidden md:inline-flex">{{ __('Criar Treinador') }}</span>
 					</x-action-button>
-					<x-dialog>
-						<x-slot name="title">Adicionar Treinador</x-slot>
-						
-					</x-dialog>
 				</div>
 				<div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
 					<div class="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
@@ -31,33 +27,33 @@
 											scope="col"
 											class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase"
 										>
-											Name
+											Nome
 										</th>
 										<th
 											scope="col"
 											class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase"
 										>
-											Title
+											NIF
 										</th>
 										<th
 											scope="col"
 											class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase"
 										>
-											Status
+											Telemovel
 										</th>
 										<th
 											scope="col"
 											class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase"
 										>
-											Role
+											Genéro
 										</th>
 										<th scope="col" class="relative px-6 py-3">
-											<span class="sr-only">Edit</span>
+											<span class="sr-only">Action</span>
 										</th>
 									</tr>
 								</thead>
 								<tbody class="bg-white divide-y divide-gray-200">
-									<template x-for="i in 10" :key="i">
+									@foreach ($treinadores as $treinador)
 										<tr class="transition-all hover:bg-gray-100 hover:shadow-lg">
 											<td class="px-6 py-4 whitespace-nowrap">
 												<div class="flex items-center">
@@ -69,28 +65,27 @@
 														/>
 													</div>
 													<div class="ml-4">
-														<div class="text-sm font-medium text-gray-900">Ahmed Kamel</div>
-														<div class="text-sm text-gray-500">ahmed.kamel@example.com</div>
+														<div class="text-sm font-medium text-gray-900">{{ $treinador->nome_completo }}</div>
+														<div class="text-sm text-gray-500">{{ $treinador->email }}</div>
 													</div>
 												</div>
 											</td>
 											<td class="px-6 py-4 whitespace-nowrap">
-												<div class="text-sm text-gray-900">Regional Paradigm Technician</div>
-												<div class="text-sm text-gray-500">Optimization</div>
+												<div class="text-sm text-gray-900">{{ $treinador->NIF }}</div>
 											</td>
 											<td class="px-6 py-4 whitespace-nowrap">
-												<span
-													class="inline-flex px-2 text-xs font-semibold leading-5 text-green-800 bg-green-100 rounded-full"
+												<div
+													class="class="text-sm font-medium text-gray-900""
 												>
-													Active
-												</span>
+													{{ $treinador->telemovel }}
+												</div>
 											</td>
-											<td class="px-6 py-4 text-sm text-gray-500 whitespace-nowrap">Admin</td>
+											<td class="px-6 py-4 text-sm text-gray-500 whitespace-nowrap">{{ $treinador->genero }}</td>
 											<td class="px-6 py-4 text-sm font-medium text-right whitespace-nowrap">
 												<a href="#" class="text-indigo-600 hover:text-indigo-900">Edit</a>
 											</td>
 										</tr>
-									</template>
+									@endforeach
 								</tbody>
 							</table>
 						</div>
