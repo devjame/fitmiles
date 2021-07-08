@@ -16,7 +16,7 @@ class TreinadorController extends Controller
     {
         $treinadores = Treinador::all();
         // dd($treinadores);
-        return view('treinadores', ['treinadores' => $treinadores]);
+        return view('treinadores.index', ['treinadores' => $treinadores]);
     }
 
     /**
@@ -26,7 +26,7 @@ class TreinadorController extends Controller
      */
     public function create()
     {
-        return view('component.dialog');
+        return view('treinadores.criar');
     }
 
     /**
@@ -38,19 +38,26 @@ class TreinadorController extends Controller
     public function store(Request $request, Treinador $treinador)
     {
         $validated = $request->validate([
-            'nome_completo' => 'required',
-            'email' => 'required|unique:email'
+            'nome' => ['required', 'max:255'],
+            'email' => ['required', 'unique:email', 'max:255'],
+            'telemovel' => 'required',
+            'nif' => ['required', 'max:9'],
+            'genero' => ['required'],
+            'data_NS' => ['required', 'date']
         ]);
 
-        $request()->user()->treinadores()->create([
-            'nome_completo' => $request('nome_completo'),
-            'email' => $request('email'),
-            'NIF' => $request('nif'),
-            'telemovel' => $request('telemovel'),
-            'genero' => $request('genero'),
-            'endereco' => $request('address')
+        $request->user()->treinadores()->create([
+            'nome_completo' => $request->nome,
+            'email' => $request->email,
+            'NIF' => $request->nif,
+            'telemovel' => $request->telemovel,
+            'genero' => $request->genero,
+            'data_de_nascimento' => $request->data_NS,
+            'endereco' => $request->address
         ]);
-        return back();
+
+        $treinador->refresh();
+        return redirect()->route('treinadores.index');
     }
 
     /**
@@ -67,35 +74,38 @@ class TreinadorController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  Treinador $treinador
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Treinador $treinador)
     {
-
-        return view('treinadores');
+        return view('treinadores.editar', compact('treinador'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  Treinador $treinador
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Treinador $treinador)
     {
-        //
+        $treinador->update($request->validated());
+        $treinador->refresh();
+        return redirect()->route('treinadores.index');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  Treinador $treinador
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Treinador $treinador)
     {
-        //
+        $treinador->delete();
+        $treinador->refresh();
+        return redirect()->route('treinadores.index');
     }
 }
