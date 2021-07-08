@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\TreinadorController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,9 +24,7 @@ Route::middleware(['auth'])->group(function () {
         return view('dashboard');
     })->name('dashboard');
 
-    Route::get('/treinadores', function () {
-        return view('treinadores');
-    })->name('treinadores');
+    Route::resource('treinadores', TreinadorController::class);
 
     Route::get('/membros', function () {
         return view('membros');
@@ -42,6 +41,5 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/modalidades', function () {
         return view('modalidades');
     })->name('modalidades');
-    
 });
 require __DIR__ . '/auth.php';
