@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\MembroController;
 use App\Http\Controllers\TreinadorController;
 use Illuminate\Support\Facades\Route;
 
@@ -24,11 +25,11 @@ Route::middleware(['auth'])->group(function () {
         return view('dashboard');
     })->name('dashboard');
 
-    Route::resource('treinadores', TreinadorController::class);
+    Route::resource('treinadores', TreinadorController::class)->parameters([
+        'treinadores' => 'treinador'
+    ]);
 
-    Route::get('/membros', function () {
-        return view('membros');
-    })->name('membros');
+    Route::resource('membros', MembroController::class);
 
     Route::get('/calendario', function () {
         return view('calendario');
