@@ -2,7 +2,6 @@
 <div
 	x-show.in.out.opacity="isSidebarOpen"
 	class="fixed inset-0 z-10 bg-black bg-opacity-20 lg:hidden"
-	style="backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px)"
 ></div>
 <aside 
 	x-transition:enter="transition transform duration-300"
@@ -59,10 +58,10 @@
 			<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
 			</svg>
-			<span x-show="isSidebarOpen" class="pl-4">{{ __('Calendario') }}</span>
+			<span x-show="isSidebarOpen" class="pl-4">{{ __('Calendário') }}</span>
 		</x-sidebar-link>
 
-		<x-sidebar-link class="w-full" :href="route('planos')" :active="request()->routeIs('planos')">
+		<x-sidebar-link class="w-full" :href="route('planos.index')" :active="request()->routeIs('planos.*')">
 			<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
 			</svg>
