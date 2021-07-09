@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\MembroController;
+use App\Http\Controllers\ModalidadeController;
 use App\Http\Controllers\TreinadorController;
 use Illuminate\Support\Facades\Route;
 
@@ -31,6 +32,8 @@ Route::middleware(['auth'])->group(function () {
 
     Route::resource('membros', MembroController::class);
 
+    Route::resource('modalidades', ModalidadeController::class);
+
     Route::get('/calendario', function () {
         return view('calendario');
     })->name('calendario');
@@ -38,9 +41,5 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/planos', function () {
         return view('planos');
     })->name('planos');
-
-    Route::get('/modalidades', function () {
-        return view('modalidades');
-    })->name('modalidades');
 });
 require __DIR__ . '/auth.php';
