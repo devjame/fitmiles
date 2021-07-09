@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\MembroController;
+use App\Http\Controllers\MensalidadeController;
 use App\Http\Controllers\ModalidadeController;
 use App\Http\Controllers\TreinadorController;
 use Illuminate\Support\Facades\Route;
@@ -34,12 +35,10 @@ Route::middleware(['auth'])->group(function () {
 
     Route::resource('modalidades', ModalidadeController::class);
 
+    Route::resource('planos', MensalidadeController::class);
+
     Route::get('/calendario', function () {
         return view('calendario');
     })->name('calendario');
-
-    Route::get('/planos', function () {
-        return view('planos');
-    })->name('planos');
 });
 require __DIR__ . '/auth.php';
