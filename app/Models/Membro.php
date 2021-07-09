@@ -34,4 +34,9 @@ class Membro extends Authenticatable
     {
         return $this->belongsTo(User::class);
     }
+
+    public function mensalidades()
+    {
+        return $this->hasMany(Mensalidade::class);
+    }
 }

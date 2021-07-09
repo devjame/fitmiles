@@ -49,4 +49,8 @@ class User extends Authenticatable
     {
         return $this->hasMany(Membro::class);
     }
+    public function mensalidades()
+    {
+        return $this->hasMany(Mensalidade::class);
+    }
 }
