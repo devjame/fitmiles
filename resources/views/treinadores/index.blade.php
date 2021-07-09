@@ -8,7 +8,7 @@
 	<div class="py-6 px-4 container">
 		<div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
 			<div class="flex flex-col">
-				<div class="flex justify-between mb-4" x-data="{ showModal: false}">
+				<div class="flex justify-between mb-4">
 					<p>Treinadores</p>
 					<x-action-button class="bg-primary-light w-9 h-9 md:w-44 rounded-full flex-shrink-0 justify-center" href="{{ route('treinadores.create') }}">
 						<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -17,10 +17,10 @@
 						<span class="hidden md:inline-flex">{{ __('Novo Treinador') }}</span>
 					</x-action-button>
 				</div>
-				<div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
-					<div class="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
-						<div class="overflow-hidden border-b border-gray-200 rounded-md shadow-md">
-							<table class="min-w-full overflow-x-scroll divide-y divide-gray-200">
+				<div class="max-w-full -my-2 overflow-x-auto md:overflow-x-hidden sm:-mx-6 lg:-mx-8">
+					<div class="inline-block  min-w-full py-2 align-middle sm:px-6 lg:px-8">
+						<div class="border-b border-gray-200 rounded-md shadow-md">
+							<table class=" min-w-full divide-y divide-gray-200">
 								<thead class="bg-gray-50">
 									<tr>
 										<th
@@ -55,7 +55,7 @@
 								<tbody class="bg-white divide-y divide-gray-200">
 									@foreach ($treinadores as $treinador)
 										<tr class="transition-all hover:bg-gray-100 hover:shadow-lg">
-											<td class="px-6 py-4 whitespace-nowrap">
+											<td class="px-6 py-4">
 												<div class="flex items-center">
 													<div class="flex-shrink-0 w-8 h-8 text-blue-300">
 														<svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 rounded-full" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -68,10 +68,10 @@
 													</div>
 												</div>
 											</td>
-											<td class="px-6 py-4 whitespace-nowrap">
+											<td class="px-6 py-4 ">
 												<div class="text-sm text-gray-900">{{ $treinador->NIF }}</div>
 											</td>
-											<td class="px-6 py-4 whitespace-nowrap">
+											<td class="px-6 py-4">
 												<div
 													class="class="text-sm font-medium text-gray-900""
 												>
@@ -79,12 +79,14 @@
 												</div>
 											</td>
 											<td class="px-6 py-4 text-sm text-gray-500 whitespace-nowrap">{{ $treinador->genero }}</td>
-											<td class="px-6 py-4 text-sm font-medium text-right whitespace-nowrap flex items-center space-x-3">
-												<a href="{{ route('treinadores.edit', $treinador) }}" class="text-indigo-600 hover:text-indigo-900">Editar</a>
-												<form action="{{ route('treinadores.destroy', $treinador) }}" method="POST" class="mr-1">
+
+											<td class="px-6 py-4 text-sm font-medium text-right whitespace-nowrap flex items-center space-x-3 flex-col md:flex-row">
+												<a href="{{ route('treinadores.edit', $treinador) }}" class="text-indigo-600 hover:text-indigo-900 mb-4 md:mb-0">Editar</a>
+												
+												<form -action="{{ route('treinadores.destroy', $treinador) }}" method="POST" class="mr-1">
 													@csrf
 													@method('DELETE')
-													<button type="submit" class="text-blue-500">Remover</button>
+													<button type="submit" class="text-red-500">Remover</button>
 											</form>
 											</td>
 										</tr>
