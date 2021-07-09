@@ -69,7 +69,7 @@
 			<span x-show="isSidebarOpen" class="pl-4">{{ __('Planos') }}</span>
 		</x-sidebar-link>
 
-		<x-sidebar-link class="w-full" :href="route('modalidades')" :active="request()->routeIs('modalidades')">
+		<x-sidebar-link class="w-full" :href="route('modalidades.index')" :active="request()->routeIs('modalidades.*')">
 			<x-gym-icon class="h-6 w-6 " fill="none" stroke="currentColor"></x-gym-icon>
 			<span x-show="isSidebarOpen" class="pl-4">{{ __('Modalidades') }}</span>
 		</x-sidebar-link>
