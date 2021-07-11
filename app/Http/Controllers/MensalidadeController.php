@@ -84,7 +84,7 @@ class MensalidadeController extends Controller
      * @param  Mensalidade $mensalidade
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, mensalidade $mensalidade)
+    public function update(Request $request, Mensalidade $mensalidade)
     {
         $mensalidade->update($request->validated());
         $mensalidade->refresh();
