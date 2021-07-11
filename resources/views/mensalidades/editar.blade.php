@@ -1,7 +1,7 @@
 <x-app-layout>
 	<x-slot name="header">
 		<h2 class="font-semibold text-xl text-gray-800 leading-tight">
-				{{ __('Editar Modalidade') }}
+				{{ __('Editar Plano') }}
 		</h2>
 	</x-slot>
 
@@ -13,7 +13,7 @@
 						<!-- Validation Errors -->
 						<x-auth-validation-errors class="mb-4" :errors="$errors" />
 
-						<form method="POST" action="{{ route('treinadores.update', $treinador) }}">
+						<form method="POST" action="{{ route('planos.update', $mensalidade) }}">
 							@csrf
 							@method('PUT')
 
@@ -21,7 +21,7 @@
 							<div>
 									<x-label for="nome" :value="__('Nome')" />
 
-									<x-input id="nome" class="block mt-1 w-full" type="text" name="nome" :value="{{ $modalidade->nome }}" required autofocus />
+									<x-input id="nome" class="block mt-1 w-full" type="text" name="nome" value="{{ $mensalidade->nome }}" required autofocus />
 							</div>
 
 							<!-- Descrição -->
@@ -30,24 +30,32 @@
 
 									<textarea id="descricao" 
 									class="block mt-1 w-full rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" 
-									name="descricao" :value="{{ $modalidade->descricao }}" required >
-
+									name="descricao" required >{{ $mensalidade->descricao }}
 									</textarea>
 							</div>
 							
-							<!-- Status -->
+							<!-- Preço -->
 							<div class="mt-4">
-								<x-label for="status" :value="__('Status')" />
+									<x-label for="montante" :value="__('Preço')" />
+
+									<x-input id="montante" class="block mt-1 w-full" type="number" name="montante" value="{{ $mensalidade->montante }}" required autofocus />
+							</div>
+							
+							<!-- Duração -->
+							<div class="mt-4">
+								<x-label for="duracao" :value="__('Valido Até')" />
 								
-								<select name="status" id="status" class="block mt-1 w-full rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" required v-model="{{ $modalidade->status }}">
-									<option value="ativo">Ativo</option>
-									<option value="inativo">Inativo</option>
+								<select name="duracao" id="duracao" class="block mt-1 w-full rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" required v-model="{{ $mensalidade->duracao }}">
+									<option value="30 dias" selected>1 mês</option>
+									<option value="90 dias">3 meses</option>
+									<option value="180 dias">6 meses</option>
+									<option value="360 dias">12 meses</option>
 								</select>
 							</div>
 
 							<!-- Actions button-->
 							<div class="flex items-center justify-between mt-4">
-									<a class="inline-flex items-center text-center px-4 py-2 text-sm bg-red-400 text-white rounded-md" href="{{ route('treinadores.index') }}">
+									<a class="inline-flex items-center text-center px-4 py-2 text-sm bg-red-400 text-white rounded-md" href="{{ route('planos.index') }}">
 											{{ __('Cancelar') }}
 									</a>
 

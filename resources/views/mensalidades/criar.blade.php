@@ -55,7 +55,7 @@
 							
 							<!-- Actions button-->
 							<div class="flex items-center justify-between mt-4">
-									<a class="inline-flex items-center text-center px-4 py-2 text-sm bg-red-400 text-white rounded-md" href="{{ route('modalidades.index') }}">
+									<a class="inline-flex items-center text-center px-4 py-2 text-sm bg-red-400 text-white rounded-md" href="{{ route('planos.index') }}">
 											{{ __('Cancelar') }}
 									</a>
 
