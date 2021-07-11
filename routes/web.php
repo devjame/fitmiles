@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\MembroController;
 use App\Http\Controllers\MensalidadeController;
 use App\Http\Controllers\ModalidadeController;
@@ -23,9 +24,7 @@ Route::get('/', function () {
 
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+    Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
     Route::resource('treinadores', TreinadorController::class)->parameters([
         'treinadores' => 'treinador'
@@ -35,7 +34,9 @@ Route::middleware(['auth'])->group(function () {
 
     Route::resource('modalidades', ModalidadeController::class);
 
-    Route::resource('planos', MensalidadeController::class);
+    Route::resource('planos', MensalidadeController::class)->parameters([
+        'planos' => 'mensalidade'
+    ]);;
 
     Route::get('/calendario', function () {
         return view('calendario');
