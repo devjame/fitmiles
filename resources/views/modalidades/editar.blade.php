@@ -13,7 +13,7 @@
 						<!-- Validation Errors -->
 						<x-auth-validation-errors class="mb-4" :errors="$errors" />
 
-						<form method="POST" action="{{ route('treinadores.update', $treinador) }}">
+						<form method="POST" action="{{ route('modalidades.update', $treinador) }}">
 							@csrf
 							@method('PUT')
 
@@ -47,7 +47,7 @@
 
 							<!-- Actions button-->
 							<div class="flex items-center justify-between mt-4">
-									<a class="inline-flex items-center text-center px-4 py-2 text-sm bg-red-400 text-white rounded-md" href="{{ route('treinadores.index') }}">
+									<a class="inline-flex items-center text-center px-4 py-2 text-sm bg-red-400 text-white rounded-md" href="{{ route('modalidades.index') }}">
 											{{ __('Cancelar') }}
 									</a>
 
