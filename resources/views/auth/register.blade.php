@@ -1,4 +1,7 @@
 <x-guest-layout>
+    <div class="min-h-screen">
+        <img src="{{ asset('storage/workout/workout-william-choquette.jpg') }}" alt="Workout" class="w-full max-h-screen object-cover">
+    </div>
     <x-auth-card>
         <x-slot name="logo">
             <a href="/" style="color: #47CB93;">
@@ -56,5 +59,4 @@
             </div>
         </form>
     </x-auth-card>
-    <div class=" min-h-screen bg-blue-500"></div>
 </x-guest-layout>
