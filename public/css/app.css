@@ -33174,45 +33174,45 @@ select {
 
 @-webkit-keyframes fadeIn {
   from {
-    opacity: 0
+    opacity: 0;
   }
 
   to {
-    opacity: 1
+    opacity: 1;
   }
 }
 
 @keyframes fadeIn {
   from {
-    opacity: 0
+    opacity: 0;
   }
 
   to {
-    opacity: 1
+    opacity: 1;
   }
 }
 
 @-webkit-keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translate3d(0, 10%, 0)
+    transform: translate3d(0, 10%, 0);
   }
 
   to {
     opacity: 1;
-    transform: translate3d(0, 0, 0)
+    transform: translate3d(0, 0, 0);
   }
 }
 
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translate3d(0, 10%, 0)
+    transform: translate3d(0, 10%, 0);
   }
 
   to {
     opacity: 1;
-    transform: translate3d(0, 0, 0)
+    transform: translate3d(0, 0, 0);
   }
 }
 
@@ -33222,7 +33222,7 @@ dialog[open] {
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
   -webkit-animation-name: fadeInUp;
-  animation-name: fadeInUp
+  animation-name: fadeInUp;
 }
 
 dialog::-webkit-backdrop {
@@ -33234,7 +33234,7 @@ dialog::-webkit-backdrop {
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
   -webkit-animation-name: fadeIn;
-  animation-name: fadeIn
+  animation-name: fadeIn;
 }
 
 dialog::backdrop {
@@ -33246,7 +33246,31 @@ dialog::backdrop {
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
   -webkit-animation-name: fadeIn;
-  animation-name: fadeIn
+  animation-name: fadeIn;
+}
+
+/* width */
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 
 @media (min-width: 640px) {
@@ -194663,3 +194687,4 @@ dialog::backdrop {
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   }
 }
+
