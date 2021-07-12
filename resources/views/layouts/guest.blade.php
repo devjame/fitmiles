@@ -17,7 +17,7 @@
         <script src="{{ asset('js/app.js') }}" defer></script>
     </head>
     <body>
-        <div class="font-sans text-gray-900 antialiased grid grid-cols-2">
+        <div class="font-sans text-gray-900 antialiased">
             {{ $slot }}
         </div>
     </body>
