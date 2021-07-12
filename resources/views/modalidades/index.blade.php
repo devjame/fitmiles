@@ -5,8 +5,8 @@
 		</h2>
 	</x-slot>
 
-	<div class="py-6 px-4 container">
-		<div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+	<div class="py-6 px-4">
+		<div class="sm:px-6 lg:px-8">
 			<div class="flex flex-col">
 				<div class="flex justify-between mb-4">
 					<p>Modalidades</p>
@@ -17,7 +17,7 @@
 						<span class="hidden md:inline-flex">{{ __('Nova Modalidade') }}</span>
 					</x-action-button>
 				</div>
-				<div class="max-w-full -my-2 overflow-x-auto md:overflow-x-hidden	sm:-mx-6 lg:-mx-8">
+				<div class="overflow-x-auto md:overflow-x-hidden	sm:-mx-6 lg:-mx-8">
 					<div class="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
 						<div class="border-b border-gray-200 rounded-md shadow-md">
 							<table class="min-w-full divide-y divide-gray-200">

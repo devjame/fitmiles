@@ -5,9 +5,9 @@
 		</h2>
 	</x-slot>
 
-	<div class="py-6 px-4 container">
-		<div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-			<div class="flex flex-col">
+	<div class="py-6 px-4">
+		<div class="sm:px-6 lg:px-8">
+			<div class="flex flex-col max-w-full">
 				<div class="flex justify-between mb-4">
 					<p>Treinadores</p>
 					<x-action-button class="bg-primary-light w-9 h-9 md:w-44 rounded-full flex-shrink-0 justify-center" href="{{ route('treinadores.create') }}">
@@ -17,10 +17,10 @@
 						<span class="hidden md:inline-flex">{{ __('Novo Treinador') }}</span>
 					</x-action-button>
 				</div>
-				<div class="max-w-full -my-2 overflow-x-auto md:overflow-x-hidden sm:-mx-6 lg:-mx-8">
-					<div class="inline-block  min-w-full py-2 align-middle sm:px-6 lg:px-8">
+				<div class="sm:px-6 lg:px-8 overflow-x-auto sm:-mx-6 lg:-mx-8">
+					<div class="inline-block w-full py-2 align-middle ">
 						<div class="border-b border-gray-200 rounded-md shadow-md">
-							<table class=" min-w-full divide-y divide-gray-200">
+							<table class="w-full divide-y divide-gray-200">
 								<thead class="bg-gray-50">
 									<tr>
 										<th

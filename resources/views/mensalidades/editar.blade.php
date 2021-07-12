@@ -5,7 +5,7 @@
 		</h2>
 	</x-slot>
 
-	<div class="py-6 px-4 container">
+	<div class="py-6 px-4">
 		<div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
 			<div class="flex flex-col items-center justify-center">
 				<div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8 w-full md:w-2/3 lg:w-1/2 ">
