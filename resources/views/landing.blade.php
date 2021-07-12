@@ -2,18 +2,20 @@
     <nav class="relative px-4 py-4 flex justify-between items-center bg-white">
 		<a class="text-3xl font-bold leading-none text-secondary" href="/">
 			<x-application-logo class="h-10 fill-current"/>
-		</a>
-		
+		</a>		
+        
         @if (Route::has('login'))
+        <div>
             @auth
                 <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 underline">Dashboard</a>
             @else
-                <a href="{{ route('login') }}" class="hidden lg:inline-block lg:ml-auto lg:mr-3 py-2 px-6 bg-gray-100 hover:bg-gray-200 text-sm text-gray-900 font-bold  rounded-xl transition duration-200">Log in</a>
+                <a href="{{ route('login') }}" class="lg:inline-block lg:ml-auto mr-3 py-2 px-6 bg-gray-100 hover:bg-gray-200 text-sm text-gray-900 font-bold  rounded-xl transition duration-200">Log in</a>
 
                 @if (Route::has('register'))
-                    <a href="{{ route('register') }}" class="hidden lg:inline-block py-2 px-6 bg-primary hover:bg-blue-600 text-sm text-white font-bold rounded-xl transition duration-200">Register</a>
+                    <a href="{{ route('register') }}" class="lg:inline-block py-2 px-6 bg-primary hover:bg-blue-600 text-sm text-white font-bold rounded-xl transition duration-200">Register</a>
                 @endif
             @endauth
+        </div>
         @endif
 
 	</nav>
@@ -25,7 +27,7 @@
                         <span>Leve</span> <span >o seu Ginásio</span> <span class="block w-full py-2 text-transparent bg-clip-text leading-12 bg-gradient-to-r from-secondary to-primary-light lg:inline">milhas a frente</span>🚀
                     </h1>
                     <p class="px-0 mb-8 text-lg text-gray-600 md:text-xl lg:px-24">
-                        Ganhe a produtividade que tanto queria com <span class="text uppercase text-primary font-bold text-2xl">Fitmiles</span>. Contruido para facilitar a gestão do seu ginásio.
+                        Ganhe a produtividade que tanto deseja com <span class="text uppercase text-primary font-bold text-2xl">Fitmiles</span>. Contruido para facilitar a gestão do seu ginásio.
                     </p>
                     <div class="mb-4 space-x-0 md:space-x-2 md:mb-8">
                         <a href="{{ route('login') }}" class="inline-flex items-center justify-center w-full px-6 py-3 mb-2 text-lg text-white bg-green-400 rounded-2xl sm:w-auto sm:mb-0">
@@ -41,14 +43,14 @@
                 <div class="w-full mx-auto mt-20 text-center md:w-10/12">
                     <div class="relative z-0 w-full mt-8">
                         <div class="relative overflow-hidden shadow-2xl">
-                            <div class="flex items-center flex-none px-4 bg-green-400 rounded-b-none h-11 rounded-xl">
+                            <div class="flex items-center flex-none px-4 bg-secondary rounded-b-none h-11 rounded-xl">
                                 <div class="flex space-x-1.5">
                                     <div class="w-3 h-3 border-2 border-white rounded-full"></div>
                                     <div class="w-3 h-3 border-2 border-white rounded-full"></div>
                                     <div class="w-3 h-3 border-2 border-white rounded-full"></div>
                                 </div>
                             </div>
-                            <img src="https://cdn.devdojo.com/images/march2021/green-dashboard.jpg">
+                            <img src="{{ asset('storage/dashboard.jpg') }}">
                         </div>
                     </div>
                 </div>
