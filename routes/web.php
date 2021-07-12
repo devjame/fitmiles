@@ -36,7 +36,7 @@ Route::middleware(['auth'])->group(function () {
 
     Route::resource('planos', MensalidadeController::class)->parameters([
         'planos' => 'mensalidade'
-    ]);;
+    ]);
 
     Route::get('/calendario', function () {
         return view('calendario');
