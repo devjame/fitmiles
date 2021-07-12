@@ -27,7 +27,7 @@ class TreinadorFactory extends Factory
             'NIF' => $this->faker->unique()->randomNumber(9, true),
             'endereco' => $this->faker->address(),
             'telemovel' => $this->faker->unique()->e164PhoneNumber(),
-            'genero' => $this->faker->randomElement(['M', 'F', 'N']),
+            'genero' => $this->faker->randomElement(['M', 'F']),
         ];
     }
 }
