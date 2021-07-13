@@ -35,7 +35,7 @@
                     />
                 </button>
                 <div @click.away=" isOpen = false " x-show.transition.opacity="isOpen"
-                    class="absolute mt-3 transform -translate-x-full bg-white rounded-md shadow-lg min-w-max">
+                    class="absolute mt-3 transform -translate-x-full bg-white rounded-md shadow-lg min-w-max z-10">
     
                     <div class="px-4">
                         <div class="font-medium text-base text-gray-800">{{ Auth::user()->name }}</div>
