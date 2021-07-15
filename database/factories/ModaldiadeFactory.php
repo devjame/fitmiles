@@ -24,6 +24,7 @@ class MembroFactory extends Factory
         return [
             'nome' => $this->faker->randomElement(['Ciclismo', 'Flexões', 'Abdominal', 'Sprint']),
             'descricao' => $this->faker->sentence(),
+            'status' => $this->faker->randomElement(['ativo', 'inativo'])
         ];
     }
 }
