@@ -50,7 +50,7 @@
                                     <div class="w-3 h-3 border-2 border-white rounded-full"></div>
                                 </div>
                             </div>
-                            <img src="{{ asset('storage/dashboard.jpg') }}">
+                            <img src="https://res.cloudinary.com/dvmedia/image/upload/v1626355587/dashboard_jhlm4u.jpg">
                         </div>
                     </div>
                 </div>
