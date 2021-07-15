@@ -28,7 +28,7 @@ class MembroFactory extends Factory
             'endereco' => $this->faker->address(),
             'telemovel' => $this->faker->unique()->e164PhoneNumber(),
             'data_de_nascimento' => $this->faker->date(),
-            'user_id' => $this->faker->Number(1),
+            'user_id' => 1,
             'telemovel' => $this->faker->unique()->e164PhoneNumber(),
             'genero' => $this->faker->randomElement(['M', 'F']),
         ];

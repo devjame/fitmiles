@@ -12,7 +12,7 @@ class MembroFactory extends Factory
      *
      * @var string
      */
-    protected $model = Modalidade::class;
+    protected $model = Mensalidade::class;
 
     /**
      * Define the model's default state.
@@ -22,9 +22,11 @@ class MembroFactory extends Factory
     public function definition()
     {
         return [
-            'nome' => $this->faker->randomElement(['Ciclismo', 'Flexões', 'Abdominal', 'Sprint']),
+            'nome' => $this->faker->word(),
+            'duracao' => $this->faker->randomElement(['30 dias', '90 dias', '180 dias', '360 dias']),
             'descricao' => $this->faker->sentence(),
-            'status' => $this->faker->randomElement(['ativo', 'inativo'])
+            'montante' => $this->faker->randomFloat(2, 20, 100),
+            'user_id' => 1,
         ];
     }
 }
