@@ -2,7 +2,7 @@
     <div class="grid grid-cols-2">
     
         <div class=" min-h-screen">
-            <img src="{{ asset('storage/workout/workout-weight.jpg') }}" alt="Workout" class="w-full h-screen object-cover">
+            <img src="https://res.cloudinary.com/dvmedia/image/upload/v1626355576/workout-weight_kjpqie.jpg" alt="Workout" class="w-full h-screen object-cover">
         </div>
         <x-auth-card>
             <x-slot name="logo">
